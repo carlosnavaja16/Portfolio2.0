@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html  lang="en-us">
+
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="Robots" content="index, follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Carlos Rossi Computer Programming Student At Broward College Porfolio Resume and Contact Information">
+        <meta name="author" content="Carlos Rossi">
+        <title>Carlos Rossi</title>
+        
+		<!-- Icon -->
+		<link rel="icon" href="Assets/icon.png">
+		
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="CSS/css.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+        
+        <!--Javascript external file-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script type='text/javascript' src="JS/script.js"></script>
+
+        <script type="text/javascript">
+		
+			$(document).ready(function()
+			{
+				loadElements();
+
+                $(".menuButton").click(function(){
+
+                    $("nav ul").toggle('slide', { direction: 'left'}, 500);
+
+                });
+
+                $("#accordion").accordion();
+			});
+
+        </script>
+
+    </head>	
+
+    <header>
+
+        <img id="icon" src="Assets/logogrey.png" alt="icon">
+
+        <h1 id="logo">&nbsp;CARLOS ROSSI</h1>
+
+        <section class="menu">
+
+                <nav>
+                    <ul id="navList">
+
+                    </ul>
+                </nav>
+
+        </section>
+
+    </header>
+		
+    <body>
+
+        <article class="main">
+    
+            <div class="content">            
+                    
+                    <h2 id>Q &amp; A</h2>
+
+                    <div id="accordion">
+                    <h3>What’s your workspace setup like?</h3>
+                    <div>
+                        <p>
+                        I have a custom made PC I built about three years ago. I have dual monitors.
+                        One monitor is oriented vertically. I find this makes programming more confortable.
+                        I also have a mechanical keyboard.
+                        </p>
+                    </div>
+                    <h3>What’s your OS of choice?</h3>
+                    <div>
+                        <p>
+                        I have uses Windows for the longest and therefore I feel more confortable with it.
+                        On mobile I swear by Android.
+                        </p>
+                    </div>
+                    <h3>What’s your favorite to-do list manager?</h3>
+                    <div>
+                        <p>
+                        Google Keep.
+                        </p>
+                    </div>
+                    <h3>What do you listen to while you work?</h3>
+                    <div>
+                        <p>
+                        I listen to instrumental music while I work. I like piano and jazz. Sometimes I listen 
+                        to the sountracks of some of my favorite movies.
+                        </p>
+                    </div>
+                    <h3>SWhat are you currently reading?</h3>
+                    <div>
+                        <p>
+                        I am currently reading The Accursed Kings series by Maurice Druon which was the inspiration 
+                        for the Song of Ice and Fire novels by George R.R. Martin. Also I am on a reread of the Harry Potter
+                        series which never gets old.
+                        </p>
+                    </div>
+            </div>
+
+        </article>	
+            
+    </body>
+    
+    <footer>
+
+        <span>&copy; Copyright 2016 - 2017 Carlos Rossi</span>
+
+        <a href="https://www.linkedin.com/in/carlos-rossi-23735b113" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/carlosnavaja16" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="https://plus.google.com/+potiko16/posts" target="_blank"><i class="fa fa-google-plus"></i></a>
+        <a href="https://twitter.com/carlosnavaja16" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.facebook.com/CarlitosRossi" target="_blank"><i class="fa fa-facebook"></i></a>
+
+        
+
+    </footer>
+
+</html>

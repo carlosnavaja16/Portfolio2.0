@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html  lang="en-us">
+
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="Robots" content="index, follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Carlos Rossi Computer Programming Student At Broward College Porfolio Resume and Contact Information">
+        <meta name="author" content="Carlos Rossi">
+        <title>Carlos Rossi</title>
+        
+		<!-- Icon -->
+		<link rel="icon" href="Assets/icon.png">
+		
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="CSS/css.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        
+        <!--Javascript external file-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="JS/script.js"></script>
+
+        <script type="text/javascript">
+		
+			$(document).ready(function()
+			{
+				loadElements();
+
+                $(".menuButton").click(function(){
+
+                    $("nav ul").toggle('slide', { direction: 'left'}, 500);
+
+                });
+
+                function percentage(per,theCanvas)
+                {
+
+                    canvas.style.width = "200px";
+                    canvas.style.height = "200px";
+
+
+                    cw = canvas.width;
+                    ch = canvas.height;
+                    ctx.lineWidth = 20;
+                    start = 0;
+
+                    ctx = theCanvas.getContext('2d');
+
+                    function drawArc(per)
+                    {
+                        ctx.beginPath();
+                        ctx.clearRect(0,0,cw,ch);
+                        ctx.textAlign = "center";
+                        ctx.fillText(start+"%",(cw/2),(ch/2),cw);
+                        ctx.arc(100,100,70,(3/2*Math.PI),(2*Math.PI*start/100)+(3/2*Math.PI));
+                        ctx.stroke();
+                        start++;
+                        if(start>per)
+                        {
+                            window.clearTimeout(timeOut);
+                        }
+                    }
+
+                    var timeOut = window.setInterval(function(){drawArc(per);},10);
+                }
+
+
+			});
+
+
+        </script>
+
+    </head>	
+
+    <header>
+
+        <img id="icon" src="Assets/logogrey.png" alt="icon">
+
+        <h1 id="logo">&nbsp;CARLOS ROSSI</h1>
+
+        <section class="menu">
+
+                <nav>
+                    <ul id="navList">
+
+                    </ul>
+                </nav>
+
+        </section>
+
+    </header>
+		
+    <body>
+
+        <article class="main">
+            
+
+            <div class="content">
+                
+                <div class="resume">
+
+                    <h2 id="Contact">RESUME</h2>
+
+                    <div class="resumeDataSmall">
+
+                        <p class="resumeHeader">CONTACT INFO</p>
+
+                        <table>
+
+                            <tr><td class="textLeft"><strong>Email:</strong></td><td class="textLeft">Carlos.rossi16@gmail.com</td></tr>
+                            <tr><td class="textLeft"><strong>Phone:</strong></td><td class="textLeft">(954) 515 8474</td></tr>
+                            <tr><td class="textLeft"><strong>Languages:</strong></td><td class="textLeft">English/Spanish</td></tr>
+                            <tr><td class="textLeft"><strong>Location:</strong></td><td class="textLeft">Weston, FL</td></tr>
+
+                        </table>
+                    </div>
+
+                    <div class="resumeDataBig">
+
+                        <p class="resumeHeader">SUMARY</p>
+
+                        <p class="textLeft">
+                            Creative and highly reliable Software Development Student, specializing in web development. Experienced 
+                            within various stages of the development cycle for dynamic web projects. Well-versed in numerous 
+                            programming languages including Javascript, PHP, HTML, CSS, SQL, C# and C++.
+                        </p>
+
+                    </div>
+
+                    <div class="percentageCircle">
+
+                            <canvas id="canvas" onload="percentage(90,this)"></canvas>
+
+                    </div>
+
+                    <div class="percentageCircle">
+
+                            <canvas id="canvas"></canvas>
+
+                    </div>
+
+                                        <div class="percentageCircle">
+
+                    <canvas id="canvas"></canvas>
+
+                    </div>
+
+                                        <div class="percentageCircle">
+
+                            <canvas id="canvas"></canvas>
+
+                    </div>
+
+
+                    <a href="Docs/resume.pdf" class="button" target="_blank">DOWNLOAD PDF</a>
+                    <a href="projects.html" class="button">MY PROJECTS</a>
+
+                </div>
+                
+            </div>
+
+        </article>	
+            
+    </body>
+    
+    <footer>
+
+        <span>&copy; Copyright 2016 - 2017 Carlos Rossi</span>
+
+        <a href="https://www.linkedin.com/in/carlos-rossi-23735b113" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/carlosnavaja16" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="https://plus.google.com/+potiko16/posts" target="_blank"><i class="fa fa-google-plus"></i></a>
+        <a href="https://twitter.com/carlosnavaja16" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.facebook.com/CarlitosRossi" target="_blank"><i class="fa fa-facebook"></i></a>
+
+        
+
+    </footer>
+
+</html>

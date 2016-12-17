@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html  lang="en-us">
+
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="Robots" content="index, follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Carlos Rossi Computer Programming Student At Broward College Porfolio Resume and Contact Information">
+        <meta name="author" content="Carlos Rossi">
+        <title>Carlos Rossi</title>
+        
+		<!-- Icon -->
+		<link rel="icon" href="Assets/icon.png">
+		
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="CSS/css.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        
+        <!--Javascript external file-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script type='text/javascript' src="JS/script.js"></script>
+		<script type='text/javascript' src="JS/docCookies.js"></script>
+		
+		<script type="text/javascript">
+		
+			$(document).ready(function()
+			{
+				loadElements();
+				
+                $(".menuButton").click(function(){
+
+                    $("nav ul").toggle('slide', { direction: 'left'}, 500);
+
+                });
+
+   				$( "#datePicker" ).datepicker();
+
+				$("#password").keyup(passwordStrength);
+			});
+
+			function formProcessing()
+			{
+				var valid = true;
+
+				if(document.getElementById("firstName").value=="" || document.getElementById("firstName").value==null)
+				{
+					valid = false;
+					document.getElementById("firstNameError").innerHTML = "<span>You must enter a first name</span>";
+				}
+
+				else
+				{
+					document.getElementById("firstNameError").innerHTML = "<br>";
+				}
+
+				if(document.getElementById("lastName").value=="" || document.getElementById("lastName").value==null)
+				{
+					valid = false;
+					document.getElementById("lastNameError").innerHTML = "<span>You must enter a last name</span>";
+				}
+
+				else
+				{
+					document.getElementById("lastNameError").innerHTML = "<br>";
+				}
+
+				var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+				if(document.getElementById("email").value=="" || document.getElementById("email").value==null)
+				{
+					valid = false;
+					document.getElementById("emailError").innerHTML = "<span>You must enter an email address</span>";
+				}
+
+				if(re.test(document.getElementById("email").value)==false)
+				{
+					valid = false;
+					document.getElementById("emailError").innerHTML = "<span>You must enter a valid email address</span>";
+				}
+
+				else
+				{
+					document.getElementById("emailError").innerHTML = "<br>";
+				}
+
+				if(document.getElementById("datePicker").value=="" || document.getElementById("datePicker").value==null)
+				{
+					valid = false;
+					document.getElementById("dateError").innerHTML = "<span>You must enter a date</span>";
+				}
+
+				else
+				{
+					document.getElementById("dateError").innerHTML = "<br>";
+				}
+
+				if(document.getElementById("password").value=="" || document.getElementById("password").value==null)
+				{
+					valid = false;
+					document.getElementById("passwordStrength").innerHTML = "<span>You must enter a password</span>";
+				}
+
+				else
+				{
+					document.getElementById("passwordStrength").innerHTML = "<br>";
+				}
+
+				if(document.getElementById("comment").value=="" || document.getElementById("comment").value==null)
+				{
+					valid = false;
+					document.getElementById("commentError").innerHTML = "<span>You must enter a comment</span>";
+				}
+
+				else
+				{
+					document.getElementById("commentError").innerHTML = "<br>";
+				}
+
+				if(valid == true)
+				{	
+					$("div#nameInputBox").fadeIn();
+					document.myForm.reset();
+				}
+
+			}
+
+			function ok()
+			{
+				$("div#nameInputBox").fadeOut();
+			}
+
+			function passwordStrength()
+			{
+				var strength = 0;
+				var password = document.getElementById("password").value;
+				var specialChars = "!@#$%^&*?_~,./<>?-=_+()[]{};:`|\"'"
+
+
+				if(password.length >= 6)
+				{
+					strength += 20;
+				}
+
+				if(/[a-z]/.test(password)==true)
+				{
+					strength += 20;
+				}
+
+				if(/[A-Z]/.test(password)==true)
+				{
+					strength += 20;
+				}
+
+				if(/[0-9]/.test(password)==true)
+				{
+					strength += 20;
+				}
+
+				for(var x = 0;x<specialChars.length;x++)
+				{
+					if(password.indexOf(specialChars[x]) != -1)
+					{
+						strength += 20;
+					}
+				}
+
+				if(strength <= 20)
+				{
+					document.getElementById("passwordStrength").style.color="red";
+					document.getElementById("passwordStrength").innerHTML = "<span>Password Strength: Very Weak</span>";
+				}
+
+				if(strength > 20 && strength <= 40)
+				{
+					document.getElementById("passwordStrength").style.color="orange";
+					document.getElementById("passwordStrength").innerHTML = "<span>Password Strength: Weak</span>";
+				}
+
+				if(strength > 40 && strength <= 60)
+				{
+					document.getElementById("passwordStrength").style.color="#ffe900";
+					document.getElementById("passwordStrength").innerHTML = "<span>Password Strength: Medium</span>";
+				}
+				
+				if(strength > 60 && strength <= 80)
+				{
+					document.getElementById("passwordStrength").style.color="#18ce00";
+					document.getElementById("passwordStrength").innerHTML = "<span>Password Strength: Strong</span>";
+				}
+
+				if(strength > 80 && strength <= 100)
+				{
+					document.getElementById("passwordStrength").style.color="#266d1d";
+					document.getElementById("passwordStrength").innerHTML = "<span>Password Strength: Very Strong</span>";
+				}							
+
+			}
+
+						
+		</script>
+		
+
+    </head>	
+		
+    <body>
+
+		<div id="nameInputBox">
+		
+			<h2>THANK YOU</h2>
+			
+			<p>Your comment has been submitted.</p>
+			
+			<a href="#" onclick="ok()"class="button">OK</a>
+			
+		</div>
+
+		<header>
+
+			<img id="icon" src="Assets/logogrey.png" alt="icon">
+
+			<h1 id="logo">&nbsp;CARLOS ROSSI</h1>
+
+			<section class="menu">
+
+					<nav>
+						<ul id="navList">
+
+						</ul>
+					</nav>
+
+			</section>
+
+		</header>
+
+        <article class="main">
+            
+			<div id="contact" class="content">
+			
+				<h2>CONTACT ME</h2>
+			
+                <br>
+				
+				<section class="formData">
+                
+					<form name="myForm" action="http://ss1.ciwcertified.com/cgi-bin/process.pl" method="post" novalidate>
+
+						<label  for="firstName">First Name:</label>  
+						<input id="firstName" name="firstName" type="text" placeholder="First Name">
+						
+						<div id="firstNameError" class="error"><br></div>
+						<br>
+						
+						<label  for="lastName">Last Name:</label>  
+						<input id="lastName" name="lastName" type="text" placeholder="Last Name">
+							
+						<div id="lastNameError" class="error"><br></div>
+						<br>
+
+
+						<label  for="email">Email Address:</label>  
+						<input id="email" name="email" type="text" placeholder=" Janedoe@gmail.com">
+							
+						<div id="emailError" class="error"><br></div>
+						<br>
+
+						<label for="phone">Phone Number:</label>
+						<input type="text" name="phone" placeholder=" (###) ### - ###"><br>
+					
+						<label  for="datePicker">Date:</label>  
+						<input id="datePicker" name="datePicker" type="text" value="12/12/2016">
+							
+						<div id="dateError" class="error"><br></div>
+						<br>
+
+						<label  for="password">Password:</label>  
+						<input id="password" name="password" type="password" onChange="passwordStrength()">
+							
+						<div id="passwordStrength" class="error"><br></div>
+						<br>
+
+						<label  for="comment">Comment:</label>                   
+						<textarea  id="comment" name="comment" placeholder="Comment here"></textarea>
+						
+						<div id="commentError" class="error"><br></div>
+						<br>
+						
+					</form>
+				
+				</section>
+				
+				<a href="#" class="button" onclick="formProcessing()">SUBMIT</a>
+
+                <br>
+                
+		    </div>
+			
+        </article>
+
+		<footer>
+
+        <span>&copy; Copyright 2016 - 2017 Carlos Rossi</span>
+
+        <a href="https://www.linkedin.com/in/carlos-rossi-23735b113" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/carlosnavaja16" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="https://plus.google.com/+potiko16/posts" target="_blank"><i class="fa fa-google-plus"></i></a>
+        <a href="https://twitter.com/carlosnavaja16" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.facebook.com/CarlitosRossi" target="_blank"><i class="fa fa-facebook"></i></a>
+
+        
+
+   		</footer>	
+            
+    </body>
+    
+    
+
+</html>
