@@ -1,0 +1,95 @@
+
+*
+{
+    font-weight: 700;
+    font-stretch: normal;
+    font-variant: small-caps;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;   
+}
+
+html 
+{
+    border-top: 5px solid black;
+    position: relative;
+    min-height: 100%;
+    cursor: url('../Assets/cursor.png') 25 25, auto;
+}
+
+body
+{
+    margin-bottom: 60px;
+}
+
+/*--------------------------------------------------*/
+/*-----------------------HEADER---------------------*/
+/*--------------------------------------------------*/
+
+header #icon
+{
+    display:block;
+    width: 60px;
+    height: auto;
+    margin: 20px auto;
+}
+
+header #logo
+{
+    font-weight: 700;
+    text-align: center;
+    color: #333333;
+    font-size: 3em;
+    letter-spacing: 15px;
+    font-family: 'Montserrat', sans-serif;   
+}
+
+/*--------------------------------------------------*/
+/*----------------------ARTICLE---------------------*/
+/*--------------------------------------------------*/
+
+article .jumbotron
+{
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    text-align: center;
+    font-weight: 700;
+    background-image: url("../Assets/mountainBanner.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+
+}
+
+
+/*--------------------------------------------------*/
+/*-----------------------FOOTER---------------------*/
+/*--------------------------------------------------*/
+
+.footer 
+{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 5px solid black;
+    text-align: center;
+
+}
+
+.footer span
+{
+    font-style:  italic;
+    font-size: 0.8em;
+    line-height: 30px;
+}
+
+.footer a
+{
+    font-size: 1.5em;
+    color: black;
+    letter-spacing: 15px;
+    line-height: 30px;
+    text-align: center;
+}
+
